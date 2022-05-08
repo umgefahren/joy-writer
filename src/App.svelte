@@ -29,9 +29,7 @@
 	globalShortcut.isRegistered("Cmd+S").then((registered) => {
 		if (!registered) {
 			globalShortcut.register("Cmd+S", async () => {
-				console.log("We are here");
 				if (openedFilePath !== "") {
-					console.log("This is registered");
 					status = IndicatorMessage.Save;
 					await saveFile(openedFilePath, concatedHtml);
 				}

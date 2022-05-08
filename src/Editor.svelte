@@ -15,7 +15,6 @@ import { globalShortcut } from "@tauri-apps/api";
     let previousContents: string[] = []
 
     setInterval(() => {
-        console.log("New element")
 
         previousContents.push(htmlContent)
 
@@ -24,10 +23,8 @@ import { globalShortcut } from "@tauri-apps/api";
     }, 2000)
 
     globalShortcut.isRegistered("Cmd+Z").then((registered) => {
-        console.log("Trying to register")
         if (!registered) {
             globalShortcut.register("Cmd+Z", () => {
-                console.log("back")
                 const newContent = previousContents.pop()
                 previousContents.push(newContent)
                 htmlContent = newContent
