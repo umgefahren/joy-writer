@@ -1,7 +1,6 @@
 <script lang="ts">
     import { globalShortcut } from "@tauri-apps/api";
 
-    import { cleanHtml } from "../src/cleaner";
 import TextAreaAutoResize from "./TextAreaAutoResize.svelte";
 
     let htmlContent: string = "";
@@ -36,7 +35,9 @@ import TextAreaAutoResize from "./TextAreaAutoResize.svelte";
 </script>
 
 <div class="main">
-    <TextAreaAutoResize bind:value={htmlContent} maxRows=100000000000 />
+    <div class="writearea">
+        <TextAreaAutoResize bind:value={htmlContent} maxRows=100000000000  />
+    </div>
 </div>
 
 <style>
